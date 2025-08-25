@@ -1,0 +1,128 @@
+/* ========== RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== BASE STYLES ========== */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fffaf5;
+}
+
+h1, h2, h3 {
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ========== HEADER ========== */
+header {
+  background: #f97316;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ========== NAVIGATION (Flexbox) ========== */
+nav {
+  display: flex;                   /* Flexbox for horizontal layout */
+  justify-content: space-between;  /* Push logo left, menu right */
+  align-items: center;
+  background: #fb923c;
+  padding: 0.5rem 1rem;
+}
+
+nav ul {
+  display: flex;     /* Horizontal nav */
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* ========== GRID LAYOUT FOR MAIN CONTENT ========== */
+.container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;  /* Main + Sidebar */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+main {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+aside {
+  background: #fde68a;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* ========== RECIPE CARDS (Flexbox) ========== */
+.recipes {
+  display: flex;       /* Flex container */
+  flex-wrap: wrap;     /* Wrap on smaller screens */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.recipe-card {
+  flex: 1 1 250px;     /* Flexible card width */
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: #f97316;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablet (≤900px): Narrower columns */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 2fr 1fr;
+  }
+  nav ul {
+    gap: 0.5rem;
+  }
+}
+
+/* Mobile (≤600px): Single-column layout */
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr; /* Stack main + sidebar */
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li {
+    padding: 0.25rem 0;
+  }
+}
